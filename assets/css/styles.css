@@ -119,8 +119,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- 8. SOBRE MÍ ---------- */
 .sobre-mi { display: grid; gap: 38px; align-items: start; }
-.sobre-mi__foto { order: 0; }
-.sobre-mi__imagen { display: block; width: 100%; max-width: 420px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border: 1px solid var(--linea); }
 .sobre-mi__texto { display: grid; gap: 17px; max-width: 64ch; margin-top: 24px; color: var(--tinta-suave); font-size: 1.03rem; }
 .sobre-mi__destacado { max-width: 56ch; margin-top: 28px; padding: 17px 0 17px 17px; border-left: 2px solid var(--acento); color: var(--tinta); font-family: var(--serif); font-size: 1.13rem; }
 .credenciales { display: grid; gap: 24px; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--linea); }
@@ -146,12 +144,12 @@ img { max-width: 100%; height: auto; display: block; }
   :root { --margen-lateral: 34px; }
   .seccion { padding: 96px 0; }.hero { padding: 95px 0 105px; }
   .problemas__interior { grid-template-columns: .75fr 1.25fr; gap: 65px; }.servicios { grid-template-columns: repeat(2, 1fr); column-gap: 20px; }
-  .sobre-mi { grid-template-columns: .75fr 1.25fr; gap: 55px; }.sobre-mi__foto { order: 0; }.credenciales { grid-template-columns: repeat(2, 1fr); }.proceso { grid-template-columns: repeat(2, 1fr); column-gap: 40px; }.paso:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--linea); }.paso:nth-child(even) { padding-left: 20px; }
+  .credenciales { grid-template-columns: repeat(2, 1fr); }.proceso { grid-template-columns: repeat(2, 1fr); column-gap: 40px; }.paso:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--linea); }.paso:nth-child(even) { padding-left: 20px; }
   .formulario { grid-template-columns: repeat(2, 1fr); gap: 20px 24px; padding: 32px; }.campo--completo { grid-column: 1 / -1; }.pie__interior { grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
 }
 @media (min-width: 900px) {
   :root { --alto-cabecera: 78px; }
-  .menu-boton, .fondo-menu { display: none; }.nav { position: static; max-height: none; visibility: visible; overflow: visible; background: none; border: 0; }.nav__lista { display: flex; align-items: center; gap: 21px; padding: 0; }.nav__enlace, .nav__whatsapp { padding: 4px 0; border-bottom: 1px solid transparent; font-size: .84rem; }.nav__whatsapp { color: var(--verde); }.nav__enlace:hover, .nav__whatsapp:hover { border-bottom-color: var(--acento); }.hero__interior { grid-template-columns: 1.08fr .92fr; gap: 74px; }.problemas__interior { gap: 100px; }.sobre-mi { grid-template-columns: .8fr 1.2fr; gap: 80px; }.sobre-mi__foto { position: sticky; top: calc(var(--alto-cabecera) + 28px); }.contacto { grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: start; }
+  .menu-boton, .fondo-menu { display: none; }.nav { position: static; max-height: none; visibility: visible; overflow: visible; background: none; border: 0; }.nav__lista { display: flex; align-items: center; gap: 21px; padding: 0; }.nav__enlace, .nav__whatsapp { padding: 4px 0; border-bottom: 1px solid transparent; font-size: .84rem; }.nav__whatsapp { color: var(--verde); }.nav__enlace:hover, .nav__whatsapp:hover { border-bottom-color: var(--acento); }.hero__interior { grid-template-columns: 1.08fr .92fr; gap: 74px; }.problemas__interior { gap: 100px; }.contacto { grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: start; }
 }
 @media (min-width: 1400px) { :root { --ancho-max: 1280px; } body { font-size: 17px; } }
 
