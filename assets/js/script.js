@@ -271,3 +271,16 @@
     anio.textContent = new Date().getFullYear();
   }
 })();
+
+// Animación de entrada al hacer scroll (se omite si el usuario prefiere menos movimiento).
+(function () {
+  var els = document.querySelectorAll('.revelar');
+  if (!els.length) return;
+  var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducir || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('visible'); }); return; }
+  document.documentElement.classList.add('js');
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (e) { obs.observe(e); });
+})();
