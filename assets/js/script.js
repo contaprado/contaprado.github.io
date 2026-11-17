@@ -109,11 +109,11 @@
   var reglas = {
     nombre: {
       validar: function (valor) { return valor.trim().length >= 3; },
-      mensaje: "Escribí tu nombre completo."
+      mensaje: "Escribe tu nombre completo."
     },
     correo: {
       validar: function (valor) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor.trim()); },
-      mensaje: "Escribí un correo electrónico válido."
+      mensaje: "Escribe un correo electrónico válido."
     },
     telefono: {
       // Opcional: si está vacío se acepta; si trae algo, debe tener al menos 8 dígitos
@@ -121,15 +121,15 @@
         var limpio = valor.replace(/\D/g, "");
         return limpio.length === 0 || limpio.length >= 8;
       },
-      mensaje: "Revisá el número de teléfono."
+      mensaje: "Revisa el número de teléfono."
     },
     servicio: {
       validar: function (valor) { return valor !== ""; },
-      mensaje: "Seleccioná el tipo de servicio."
+      mensaje: "Selecciona el tipo de servicio."
     },
     mensaje: {
       validar: function (valor) { return valor.trim().length >= 10; },
-      mensaje: "Contame un poco más sobre lo que necesitás."
+      mensaje: "Cuéntame un poco más sobre lo que necesitas."
     }
   };
 
@@ -211,7 +211,7 @@
 
       if (!validarFormulario()) {
         if (estado) {
-          estado.textContent = "Revisá los campos marcados.";
+          estado.textContent = "Revisa los campos marcados.";
           estado.classList.add("formulario__estado--error");
         }
         return;
@@ -253,7 +253,7 @@
         })
         .catch(function () {
           if (estado) {
-            estado.textContent = "No se pudo enviar el mensaje. Escribime por WhatsApp o correo.";
+            estado.textContent = "No se pudo enviar el mensaje. Escríbeme por WhatsApp o correo.";
             estado.classList.add("formulario__estado--error");
           }
         })
