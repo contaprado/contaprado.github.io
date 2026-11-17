@@ -109,11 +109,11 @@
   var reglas = {
     nombre: {
       validar: function (valor) { return valor.trim().length >= 3; },
-      mensaje: "Escribe tu nombre completo."
+      mensaje: "Escribí tu nombre completo."
     },
     correo: {
       validar: function (valor) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valor.trim()); },
-      mensaje: "Escribe un correo electrónico válido."
+      mensaje: "Escribí un correo electrónico válido."
     },
     telefono: {
       // Opcional: si está vacío se acepta; si trae algo, debe tener al menos 8 dígitos
@@ -121,15 +121,15 @@
         var limpio = valor.replace(/\D/g, "");
         return limpio.length === 0 || limpio.length >= 8;
       },
-      mensaje: "Revisa el número de teléfono."
+      mensaje: "Revisá el número de teléfono."
     },
     servicio: {
       validar: function (valor) { return valor !== ""; },
-      mensaje: "Selecciona el tipo de servicio."
+      mensaje: "Seleccioná el tipo de servicio."
     },
     mensaje: {
       validar: function (valor) { return valor.trim().length >= 10; },
-      mensaje: "Cuéntanos un poco más sobre lo que necesitas."
+      mensaje: "Contame un poco más sobre lo que necesitás."
     }
   };
 
@@ -211,7 +211,7 @@
 
       if (!validarFormulario()) {
         if (estado) {
-          estado.textContent = "Revisa los campos marcados.";
+          estado.textContent = "Revisá los campos marcados.";
           estado.classList.add("formulario__estado--error");
         }
         return;
@@ -248,12 +248,12 @@
       })
         .then(function (respuesta) {
           if (!respuesta.ok) throw new Error("Respuesta no válida del servidor");
-          if (estado) estado.textContent = "Mensaje enviado. Te responderemos pronto.";
+          if (estado) estado.textContent = "Mensaje enviado. Te responderé pronto.";
           formulario.reset();
         })
         .catch(function () {
           if (estado) {
-            estado.textContent = "No se pudo enviar el mensaje. Escríbeme por WhatsApp o correo.";
+            estado.textContent = "No se pudo enviar el mensaje. Escribime por WhatsApp o correo.";
             estado.classList.add("formulario__estado--error");
           }
         })

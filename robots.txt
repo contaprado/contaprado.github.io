@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://contaprado.github.io/sitemap.xml
