@@ -198,3 +198,10 @@ img { max-width: 100%; height: auto; display: block; }
 @media (prefers-reduced-motion: reduce) { .js .revelar { opacity: 1; transform: none; } .hero__foto, .wa-flotante::after { animation: none; } .servicio:hover, .boton:hover { transform: none; } }
 .servicios { row-gap: 20px; border-top: 0; }
 .servicios > .servicio { margin: 0; }
+
+/* ---------- Zonas de atención (SEO local) ---------- */
+.zonas p { color: var(--tinta-suave); margin-top: 14px; }
+.zonas__lista { display: grid; gap: 10px; margin: 20px 0; padding: 0; list-style: none; }
+.zonas__lista li { padding: 12px 0; border-bottom: 1px solid var(--linea); color: var(--tinta-suave); }
+.zonas__lista strong { color: var(--tinta); }
+.pie__zona { color: inherit; opacity: .8; font-size: .9rem; }
