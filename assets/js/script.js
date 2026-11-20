@@ -249,6 +249,7 @@
         .then(function (respuesta) {
           if (!respuesta.ok) throw new Error("Respuesta no válida del servidor");
           if (estado) estado.textContent = "Mensaje enviado. Te responderé pronto.";
+          enviarEvento("envio_formulario_contacto");
           formulario.reset();
         })
         .catch(function () {
@@ -264,7 +265,23 @@
   }
 
   /* --------------------------------------------------------
-     4. AÑO DINÁMICO EN EL PIE
+     4. EVENTOS DE CONVERSIÓN (GA4)
+     Clics a WhatsApp y envíos de formulario exitosos.
+     -------------------------------------------------------- */
+  function enviarEvento(nombre, parametros) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", nombre, parametros || {});
+    }
+  }
+
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (enlace) {
+    enlace.addEventListener("click", function () {
+      enviarEvento("click_whatsapp", { ubicacion: enlace.className || "enlace" });
+    });
+  });
+
+  /* --------------------------------------------------------
+     5. AÑO DINÁMICO EN EL PIE
      -------------------------------------------------------- */
   var anio = document.getElementById("anioActual");
   if (anio) {

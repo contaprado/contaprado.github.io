@@ -9,7 +9,7 @@
   <meta name="geo.region" content="CR-C">
   <meta name="geo.placename" content="Cartago, Costa Rica">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="María Gabriela Prado Mora">
+  <meta name="author" content="Gabriela Prado Mora">
   <meta name="theme-color" content="#142536">
 
   <link rel="canonical" href="https://contaprado.github.io/">
@@ -21,7 +21,13 @@
   <meta property="og:title" content="Contador en Cartago, Tres Ríos y Los Santos | Gabriela Prado · GP Contabilidad">
   <meta property="og:description" content="Contadora en Cartago, Tres Ríos y Los Santos. Contabilidad y finanzas, 12 años de experiencia · CPA 8812 · CPI 35512. Atención remota en todo Costa Rica.">
   <meta property="og:url" content="https://contaprado.github.io/">
+  <meta property="og:image" content="https://contaprado.github.io/assets/images/og-imagen.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gabriela Prado · GP Contabilidad · Contadora en Cartago, Tres Ríos y Los Santos">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://contaprado.github.io/assets/images/og-imagen.jpg">
+  <meta name="twitter:image:alt" content="Gabriela Prado · GP Contabilidad · Contadora en Cartago, Tres Ríos y Los Santos">
 
   <!-- Datos estructurados: zona de atención sin dirección física, para no publicar un domicilio no verificado.
        Si se agrega una dirección, debe coincidir exactamente con el Perfil de Empresa de Google. -->
@@ -36,7 +42,8 @@
     "description": "Contadora en Cartago, Tres Ríos y Los Santos: contabilidad mensual, declaraciones tributarias, análisis financiero y automatización de reportes para empresas y profesionales, con atención remota en todo Costa Rica.",
     "email": "contaprado26@gmail.com",
     "telephone": "+50689168077",
-    "founder": { "@type": "Person", "name": "María Gabriela Prado Mora", "jobTitle": "Contadora Privada y Pública Incorporada" },
+    "image": "https://contaprado.github.io/assets/images/gabriela.jpg",
+    "founder": { "@type": "Person", "name": "Gabriela Prado Mora", "jobTitle": "Contadora Privada y Pública Incorporada" },
     "knowsAbout": ["Contabilidad", "Declaraciones tributarias", "Análisis financiero", "NIIF para las PYMES", "Power BI", "Odoo", "SAP Business One"],
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Provincia de Cartago" },
@@ -63,6 +70,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Google Analytics 4. Reemplaza G-XXXXXXXXXX por tu ID de medición real (Admin > Flujos de datos, en GA4). -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 
 <body>
@@ -120,7 +136,10 @@
         </div>
 
         <div class="hero__visual animar" data-animar="4">
-          <img class="hero__foto" src="assets/images/gabriela.jpg" alt="Gabriela Prado Mora, contadora en Cartago y analista financiera" width="640" height="800" loading="eager" decoding="async">
+          <picture>
+            <source srcset="assets/images/gabriela.webp" type="image/webp">
+            <img class="hero__foto" src="assets/images/gabriela.jpg" alt="Gabriela Prado Mora, contadora en Cartago y analista financiera" width="640" height="800" loading="eager" decoding="async" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </section>
@@ -195,11 +214,12 @@
     </section>
 
     <!-- ============================================================
-         4B. ZONAS DE ATENCIÓN (SEO local)
+         4B. ZONAS DE ATENCIÓN (SEO local) — oculto visualmente a propósito;
+         sigue disponible para lectores de pantalla y motores de búsqueda.
          ============================================================ -->
-    <section class="seccion zonas" id="zonas">
+    <section class="seccion zonas visualmente-oculto" id="zonas">
       <div class="contenedor contenedor--estrecho">
-        <header class="seccion__encabezado revelar">
+        <header class="seccion__encabezado">
           <p class="seccion__etiqueta">Zonas de atención</p>
           <h2 class="seccion__titulo">Contador en Cartago y alrededores</h2>
         </header>
@@ -296,12 +316,13 @@
 
         <!-- Formulario preparado para conectar posteriormente con un servicio externo. -->
        <form class="formulario" id="formularioContacto" novalidate action="https://formspree.io/f/xdekydoe" method="post" data-endpoint="https://formspree.io/f/xdekydoe">
+          <input type="text" name="_gotcha" class="visualmente-oculto" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="campo"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="error-nombre"><p class="campo__error" id="error-nombre" role="alert" hidden></p></div>
           <div class="campo"><label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" autocomplete="email" required aria-describedby="error-correo"><p class="campo__error" id="error-correo" role="alert" hidden></p></div>
           <div class="campo"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" aria-describedby="ayuda-telefono error-telefono"><p class="campo__ayuda" id="ayuda-telefono">Opcional.</p><p class="campo__error" id="error-telefono" role="alert" hidden></p></div>
           <div class="campo"><label for="servicio">¿Qué necesitas resolver?</label><select id="servicio" name="servicio" required aria-describedby="error-servicio"><option value="">Selecciona una opción</option><option>Ordenar mi contabilidad</option><option>Llevar mi contabilidad mensual</option><option>Revisar mis estados financieros</option><option>Entender mejor mis resultados</option><option>Automatizar o reportar información</option><option>Necesito otro servicio</option></select><p class="campo__error" id="error-servicio" role="alert" hidden></p></div>
           <div class="campo campo--completo"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntame qué está pasando con tu contabilidad o tus números." aria-describedby="error-mensaje"></textarea><p class="campo__error" id="error-mensaje" role="alert" hidden></p></div>
-          <div class="campo campo--completo"><p class="campo__ayuda">Usaré tus datos únicamente para responder tu consulta.</p><button class="boton boton--primario boton--ancho" type="submit">Enviar mensaje</button><p class="formulario__estado" id="estadoFormulario" role="status" aria-live="polite"></p></div>
+          <div class="campo campo--completo"><p class="campo__ayuda">Usaré tus datos únicamente para responder tu consulta. Ver <a href="privacidad.html">política de privacidad</a>.</p><button class="boton boton--primario boton--ancho" type="submit">Enviar mensaje</button><p class="formulario__estado" id="estadoFormulario" role="status" aria-live="polite"></p></div>
         </form>
       </div>
     </section>
@@ -327,7 +348,7 @@
   <footer class="pie">
     <div class="contenedor pie__interior">
       <div class="pie__marca"><p class="pie__nombre">Gabriela Prado</p><p class="pie__secundario">GP Contabilidad</p><p class="pie__descripcion">Contabilidad · Finanzas · Datos</p><p class="pie__zona">Contador en Cartago, Tres Ríos y Los Santos · Atención remota</p><p class="pie__descripcion">CPA 8812 · CPI 35512 · 12 años de experiencia</p></div>
-      <nav class="pie__nav" aria-label="Navegación del pie de página"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+      <nav class="pie__nav" aria-label="Navegación del pie de página"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#contacto">Contacto</a></li><li><a href="privacidad.html">Privacidad</a></li></ul></nav>
       <div class="pie__contacto"><a href="https://wa.me/50689168077?text=Hola%20Gabriela%2C%20vi%20tu%20sitio%20y%20quisiera%20consultar%20sobre%20mi%20contabilidad." target="_blank" rel="noopener">WhatsApp</a><a href="mailto:contaprado26@gmail.com">contaprado26@gmail.com</a><a href="https://www.linkedin.com/in/gabriela-prado-mora-9bab63175/" target="_blank" rel="noopener" aria-label="Ver el perfil profesional de Gabriela Prado en LinkedIn">LinkedIn</a></div>
     </div>
     <div class="contenedor pie__legal"><p>&copy; <span id="anioActual">2026</span> Gabriela Prado · GP Contabilidad. Todos los derechos reservados.</p></div>
