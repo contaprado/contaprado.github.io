@@ -7,6 +7,7 @@
    2. Acordeones de preguntas frecuentes
    3. Formulario de contacto (validación + envío preparado)
    4. Año dinámico en el pie de página
+   5. Aviso de cookies y carga de Google Analytics (solo con consentimiento)
    ============================================================ */
 
 (function () {
@@ -300,4 +301,73 @@
     entradas.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function (e) { obs.observe(e); });
+})();
+
+/* --------------------------------------------------------
+   Cookies de medición: Google Analytics solo se carga si la persona
+   lo acepta. La decisión se guarda en este navegador y puede cambiarse
+   desde "Preferencias de cookies" en el pie.
+   -------------------------------------------------------- */
+(function () {
+  var ID_MEDICION = "G-24W03RWTCT";
+  var CLAVE = "cookies_medicion";
+  var aviso = document.getElementById("avisoCookies");
+  if (!aviso) return;
+
+  function leer() {
+    try { return window.localStorage.getItem(CLAVE); } catch (e) { return null; }
+  }
+  function guardar(valor) {
+    try { window.localStorage.setItem(CLAVE, valor); } catch (e) { /* sin almacenamiento */ }
+  }
+
+  function cargarAnalytics() {
+    if (window.__gaCargado) return;
+    window.__gaCargado = true;
+    window["ga-disable-" + ID_MEDICION] = false;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + ID_MEDICION;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", ID_MEDICION);
+  }
+
+  function borrarCookiesDeMedicion() {
+    window["ga-disable-" + ID_MEDICION] = true;
+    var nombres = document.cookie.split(";").map(function (c) { return c.split("=")[0].trim(); });
+    var dominios = [location.hostname, "." + location.hostname];
+    nombres.forEach(function (nombre) {
+      if (nombre.indexOf("_ga") !== 0) return;
+      dominios.forEach(function (dominio) {
+        document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + dominio;
+      });
+      document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    });
+  }
+
+  function mostrar() { aviso.hidden = false; }
+  function ocultar() { aviso.hidden = true; }
+
+  aviso.querySelectorAll("[data-cookies]").forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      if (boton.getAttribute("data-cookies") === "si") {
+        guardar("si");
+        cargarAnalytics();
+      } else {
+        guardar("no");
+        borrarCookiesDeMedicion();
+      }
+      ocultar();
+    });
+  });
+
+  var preferencias = document.getElementById("cookiesPreferencias");
+  if (preferencias) preferencias.addEventListener("click", mostrar);
+
+  var decision = leer();
+  if (decision === "si") cargarAnalytics();
+  else if (decision === null) mostrar();
 })();
