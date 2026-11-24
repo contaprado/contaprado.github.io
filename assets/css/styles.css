@@ -184,7 +184,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero__perfil--solo { margin-top: 28px; }
 .hero__foto { width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin: 0 auto; border-radius: 18px; object-fit: cover; object-position: 50% 15%; box-shadow: 0 22px 50px rgba(20, 40, 63, .2); }
 .hero__visual { display: grid; justify-items: center; }
-@media (min-width: 900px) { .hero__foto { max-width: 460px; margin-left: auto; margin-right: 0; } .servicios { grid-template-columns: repeat(6, 1fr); column-gap: 20px; } .servicio, .servicio:nth-child(odd), .servicio:nth-child(even), .servicio:last-child { grid-column: span 2; padding: 26px 24px; border-right: 1px solid var(--linea); } .servicio:nth-child(4) { grid-column: 2 / span 2; } .servicio:nth-child(5) { grid-column: 4 / span 2; } }
+@media (min-width: 900px) { .hero__foto { max-width: 460px; margin-left: auto; margin-right: 0; } .servicios { grid-template-columns: repeat(6, 1fr); column-gap: 20px; } .servicio, .servicio:nth-child(odd), .servicio:nth-child(even), .servicio:last-child { grid-column: span 2; padding: 26px 24px; border-right: 1px solid var(--linea); } }
 .servicio { padding: 24px 22px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease; }
 .servicio:hover { transform: translateY(-4px); border-color: var(--acento); box-shadow: 0 14px 30px rgba(20, 40, 63, .1); }
 .servicio__icono { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 14px; border-radius: 12px; background: #E6EBF0; color: var(--verde); transition: background-color 250ms ease, color 250ms ease; }
@@ -193,10 +193,8 @@ img { max-width: 100%; height: auto; display: block; }
 .boton:hover { transform: translateY(-2px); }
 .js .revelar { opacity: 0; transform: translateY(22px); transition: opacity 700ms cubic-bezier(.22, 1, .36, 1), transform 700ms cubic-bezier(.22, 1, .36, 1); }
 .js .revelar.visible { opacity: 1; transform: none; }
-.js .servicios .revelar:nth-child(2) { transition-delay: 90ms; }
-.js .servicios .revelar:nth-child(3) { transition-delay: 180ms; }
-.js .servicios .revelar:nth-child(4) { transition-delay: 90ms; }
-.js .servicios .revelar:nth-child(5) { transition-delay: 180ms; }
+.js .servicios .revelar:nth-child(3n+2) { transition-delay: 90ms; }
+.js .servicios .revelar:nth-child(3n) { transition-delay: 180ms; }
 .hero__foto { animation: flotar 7s ease-in-out 1.2s infinite; }
 @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 .wa-flotante::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25d366; animation: pulso 2.6s ease-out 2s 3; pointer-events: none; }
