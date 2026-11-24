@@ -263,10 +263,10 @@ check(
     "Encontrados " + str(len(spans_icono)) + " spans; sin aria-hidden: " + repr(sin_aria_hidden),
 )
 
-alt_match = re.search(r'<img class="hero__foto"[^>]*alt="([^"]*)"', HTML)
+alt_match = re.search(r'<img class="perfil__foto"[^>]*gabriela\.jpg[^>]*alt="([^"]*)"', HTML)
 alt_foto = alt_match.group(1) if alt_match else None
 check(
-    "La foto del hero tiene alt descriptivo (no vacio y con mas de 10 caracteres)",
+    "La foto de Sobre mi tiene alt descriptivo (no vacio y con mas de 10 caracteres)",
     bool(alt_foto) and len(alt_foto) > 10,
     "alt actual: " + repr(alt_foto),
 )
@@ -276,14 +276,14 @@ check(
 #     coincidir con el archivo real (evita layout shift / aspect-ratio
 #     incorrecto si alguien reemplaza la foto sin actualizar el markup).
 # ---------------------------------------------------------------------
-img_attrs = re.search(r'<img class="hero__foto"[^>]*width="(\d+)"[^>]*height="(\d+)"', HTML)
+img_attrs = re.search(r'<img class="perfil__foto"[^>]*gabriela\.jpg[^>]*width="(\d+)"[^>]*height="(\d+)"', HTML)
 img_path = ROOT / "assets" / "images" / "gabriela.jpg"
 if img_attrs and img_path.exists():
     w_html, h_html = int(img_attrs.group(1)), int(img_attrs.group(2))
     try:
         w_real, h_real = jpeg_dimensiones(img_path)
         check(
-            "Las dimensiones width/height del <img class=hero__foto> coinciden con el archivo real",
+            "Las dimensiones width/height del <img class=perfil__foto de Gabriela> coinciden con el archivo real",
             (w_html, h_html) == (w_real, h_real),
             "HTML declara " + str(w_html) + "x" + str(h_html) + ", archivo real es "
             + str(w_real) + "x" + str(h_real),
@@ -292,7 +292,7 @@ if img_attrs and img_path.exists():
         check("No se pudieron leer las dimensiones reales del JPEG", False, str(e))
 else:
     check(
-        "Se encontraron width/height en hero__foto y el archivo existe",
+        "Se encontraron width/height en la foto de Sobre mi y el archivo existe",
         False,
         "img_attrs=" + str(bool(img_attrs)) + " archivo_existe=" + str(img_path.exists()),
     )

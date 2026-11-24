@@ -35,18 +35,21 @@ def check(nombre, condicion, detalle=""):
 
 
 # ---------------------------------------------------------------------
-# 1. gabriela.jpg debe aparecer exactamente 1 vez en index.html (solo Hero).
+# 1. La foto de Gabriela va en la seccion Sobre mi (no en la portada).
+#    gabriela.jpg aparece 2 veces: el <img> de Sobre mi y el JSON-LD.
 # ---------------------------------------------------------------------
 apariciones_foto = len(re.findall(r"gabriela\.jpg", HTML))
 check(
-    "gabriela.jpg aparece exactamente 1 vez en index.html (solo en el Hero)",
-    apariciones_foto == 1,
+    "gabriela.jpg aparece exactamente 2 veces en index.html (img de Sobre mi + JSON-LD)",
+    apariciones_foto == 2,
     "Apariciones encontradas: " + str(apariciones_foto),
 )
 check(
-    "La unica aparicion de gabriela.jpg esta en el <img class=hero__foto>, no en sobre-mi",
-    bool(re.search(r'<img class="hero__foto"[^>]*gabriela\.jpg', HTML)),
+    "El <img> de gabriela.jpg es perfil__foto y esta dentro de la seccion sobre-mi",
+    bool(re.search(r'<section[^>]*id="sobre-mi".*?<img class="perfil__foto"[^>]*gabriela\.jpg.*?</section>', HTML, re.S)),
 )
+check("La portada ya no tiene foto (sin hero__foto ni hero__visual en el HTML)",
+      "hero__foto" not in HTML and "hero__visual" not in HTML)
 
 # ---------------------------------------------------------------------
 # 2. .sobre-mi__foto y .sobre-mi__imagen no deben existir ni en CSS ni en HTML.
@@ -176,18 +179,17 @@ check(
 )
 check(
     "La seccion #sobre-mi contiene exactamente un <div class=\"sobre-mi__contenido\">",
-    seccion_sobre_mi is not None and texto_seccion.count('class="sobre-mi__contenido"') == 1,
-    "Ocurrencias de sobre-mi__contenido: " + str(texto_seccion.count('class="sobre-mi__contenido"')),
+    seccion_sobre_mi is not None and texto_seccion.count('class="sobre-mi__contenido ') == 1,
+    "Ocurrencias de sobre-mi__contenido: " + str(texto_seccion.count('class="sobre-mi__contenido ')),
 )
 
 # ---------------------------------------------------------------------
-# 7. Regresion rapida: el Hero sigue teniendo su propia foto con atributos
-#    completos (no se toco por error al editar sobre-mi).
+# 7. La foto de Sobre mi conserva alt, width, height y carga diferida.
 # ---------------------------------------------------------------------
 check(
-    "El <img class=hero__foto> en el Hero conserva alt, width, height y loading=eager",
+    "El <img class=perfil__foto> de Gabriela conserva alt, width, height y loading=lazy",
     bool(re.search(
-        r'<img class="hero__foto"[^>]*alt="[^"]{10,}"[^>]*width="640"[^>]*height="800"[^>]*loading="eager"',
+        r'<img class="perfil__foto"[^>]*gabriela\.jpg[^>]*alt="[^"]{10,}"[^>]*width="640"[^>]*height="800"[^>]*loading="lazy"',
         HTML,
     )),
 )

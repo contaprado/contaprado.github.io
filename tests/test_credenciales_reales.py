@@ -140,8 +140,8 @@ check("El formulario de contacto sigue presente", 'class="formulario"' in HTML)
 check("El boton de menu movil sigue presente", "menu-boton" in HTML)
 check("El acordeon de FAQ sigue presente", "faq__pregunta" in HTML and 'aria-expanded="false"' in HTML)
 check(
-    "gabriela.jpg sigue apareciendo una sola vez (solo en el Hero, ronda anterior)",
-    len(re.findall(r"gabriela\.jpg", HTML)) == 1,
+    "gabriela.jpg aparece 2 veces (img de Sobre mi + JSON-LD)",
+    len(re.findall(r"gabriela\.jpg", HTML)) == 2,
 )
 
 # ---------------------------------------------------------------------
