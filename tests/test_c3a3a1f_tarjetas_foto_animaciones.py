@@ -164,21 +164,19 @@ check(
 )
 
 # ---------------------------------------------------------------------
-# 6. Grid de servicios a >=900px: el numero de nth-child hardcodeados (4,5)
-#    debe coincidir con la cantidad real de tarjetas .servicio en el HTML.
+# 6. Grid de servicios a >=900px: 9 tarjetas en 3 columnas (3x3). Ya no hay
+#    posiciones nth-child fijas: cada tarjeta ocupa 2 de 6 columnas.
 # ---------------------------------------------------------------------
 tarjetas = re.findall(r'<article class="servicio revelar">', HTML)
 nth_children_en_grid_900 = sorted(
     int(n) for n in re.findall(r"\.servicio:nth-child\((\d+)\)\s*\{\s*grid-column", CSS)
 )
 check(
-    "La cantidad de tarjetas .servicio coincide con los nth-child hardcodeados "
-    "en el grid de 6 columnas (>=900px)",
-    len(tarjetas) == 5 and nth_children_en_grid_900 == [4, 5],
+    "Hay 9 tarjetas .servicio y el grid de 6 columnas (>=900px) las reparte 3 por fila "
+    "sin posiciones nth-child fijas",
+    len(tarjetas) == 9 and nth_children_en_grid_900 == [],
     "Tarjetas encontradas: " + str(len(tarjetas))
-    + "; nth-child con grid-column explicito: " + repr(nth_children_en_grid_900)
-    + ". Si la cantidad de tarjetas cambia, hay que revisar manualmente el centrado de la "
-    "ultima fila en assets/css/styles.css (seccion 14, @media min-width:900px).",
+    + "; nth-child con grid-column explicito: " + repr(nth_children_en_grid_900),
 )
 
 # ---------------------------------------------------------------------
@@ -260,8 +258,8 @@ check(
 spans_icono = re.findall(r'<span class="servicio__icono"[^>]*>', HTML)
 sin_aria_hidden = [s for s in spans_icono if 'aria-hidden="true"' not in s]
 check(
-    "Los 5 iconos de servicio__icono tienen aria-hidden=\"true\" en el span contenedor",
-    len(spans_icono) == 5 and len(sin_aria_hidden) == 0,
+    "Los 9 iconos de servicio__icono tienen aria-hidden=\"true\" en el span contenedor",
+    len(spans_icono) == 9 and len(sin_aria_hidden) == 0,
     "Encontrados " + str(len(spans_icono)) + " spans; sin aria-hidden: " + repr(sin_aria_hidden),
 )
 
