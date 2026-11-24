@@ -215,3 +215,25 @@ img { max-width: 100%; height: auto; display: block; }
 .perfil__foto { width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin: 0 auto; border-radius: 18px; object-fit: cover; object-position: 50% 12%; box-shadow: 0 22px 50px rgba(20, 40, 63, .2); }
 .perfil-adrian__contenido .seccion__titulo { max-width: 16ch; }
 @media (min-width: 900px) { .perfil-adrian { grid-template-columns: minmax(0, 420px) 1fr; gap: 64px; } .perfil__foto { margin: 0; } }
+
+/* ---------- Portada sin foto y foto de Sobre mí ---------- */
+.hero__interior--solo { grid-template-columns: 1fr; }
+.hero__interior--solo .hero__titulo { max-width: 21ch; }
+@media (min-width: 900px) {
+  .hero__interior--solo { grid-template-columns: minmax(0, 860px); }
+  .perfil-adrian--invertido { grid-template-columns: 1fr minmax(0, 420px); }
+  .perfil-adrian--invertido .perfil-adrian__visual { order: 2; }
+}
+
+/* ---------- Aviso de cookies ---------- */
+.cookies { position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 150; display: grid; gap: 14px; max-width: 680px; padding: 18px 20px; background: var(--tinta); color: #e6ecee; border-radius: 14px; border: 1px solid rgba(255, 255, 255, .22); box-shadow: 0 14px 40px rgba(20, 40, 63, .35); font-size: .9rem; }
+.cookies[hidden] { display: none; }
+.cookies p { margin: 0; }
+.cookies a { color: var(--acento-sobre-oscuro); }
+.cookies__acciones { display: flex; flex-wrap: wrap; gap: 10px; }
+.cookies .boton { min-height: 42px; padding: 9px 20px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .55); }
+.cookies .boton:hover { background: rgba(255, 255, 255, .12); }
+@media (min-width: 720px) { .cookies { left: 24px; right: auto; bottom: 24px; } }
+.pie__cookies { padding: 0; background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.pie__cookies:hover { color: var(--blanco); }
+@media print { .cookies { display: none; } }
