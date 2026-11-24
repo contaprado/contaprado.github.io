@@ -85,14 +85,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Google Analytics 4. -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24W03RWTCT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-24W03RWTCT');
-  </script>
+  <!-- Google Analytics 4: se carga desde assets/js/script.js solo si la persona acepta las cookies de medición. -->
 </head>
 
 <body>
@@ -131,7 +124,7 @@
          2. HERO
          ============================================================ -->
     <section class="hero" id="inicio">
-      <div class="contenedor hero__interior">
+      <div class="contenedor hero__interior hero__interior--solo">
         <div class="hero__texto">
           <p class="eyebrow visualmente-oculto" data-animar="1">Contadora en Cartago · Tres Ríos · Los Santos · Atención remota en todo Costa Rica</p>
           <h1 class="hero__titulo animar" data-animar="1">Ordena tus números. Entiende tu negocio. Decide mejor.</h1>
@@ -149,12 +142,6 @@
           </ul>
         </div>
 
-        <div class="hero__visual animar" data-animar="4">
-          <picture>
-            <source srcset="assets/images/gabriela.webp" type="image/webp">
-            <img class="hero__foto" src="assets/images/gabriela.jpg" alt="Gabriela Prado Mora, contadora en Cartago y analista financiera" width="640" height="800" loading="eager" decoding="async" fetchpriority="high">
-          </picture>
-        </div>
       </div>
     </section>
 
@@ -274,8 +261,14 @@
          5. SOBRE MÍ
          ============================================================ -->
     <section class="seccion sobre-mi-seccion" id="sobre-mi">
-      <div class="contenedor sobre-mi">
-        <div class="sobre-mi__contenido">
+      <div class="contenedor sobre-mi perfil-adrian perfil-adrian--invertido">
+        <div class="perfil-adrian__visual">
+          <picture>
+            <source srcset="assets/images/gabriela.webp" type="image/webp">
+            <img class="perfil__foto" src="assets/images/gabriela.jpg" alt="Gabriela Prado Mora, contadora en Cartago y analista financiera" width="640" height="800" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="sobre-mi__contenido perfil-adrian__contenido">
           <p class="seccion__etiqueta">03 / Perfil</p>
           <h2 class="seccion__titulo">Soy Gabriela</h2>
 
@@ -414,7 +407,7 @@
   <footer class="pie">
     <div class="contenedor pie__interior">
       <div class="pie__marca"><img class="pie__logo" src="assets/images/logo-ape-reverso.svg" alt="APE Asesorías Prado Elizondo" width="198" height="44" loading="lazy"><p class="pie__nombre">Gabriela Prado</p><p class="pie__descripcion">Contabilidad · Finanzas · Datos</p><p class="pie__zona">Cartago, Tres Ríos y Los Santos · Atención remota en todo el país</p><p class="pie__descripcion">CPA 8812 · CPI 35512 · 12 años de experiencia</p></div>
-      <nav class="pie__nav" aria-label="Navegación del pie de página"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#adrian">Adrián</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#contacto">Contacto</a></li><li><a href="privacidad.html">Privacidad</a></li></ul></nav>
+      <nav class="pie__nav" aria-label="Navegación del pie de página"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#adrian">Adrián</a></li><li><a href="#faq">Preguntas frecuentes</a></li><li><a href="#contacto">Contacto</a></li><li><a href="privacidad.html">Privacidad</a></li><li><button type="button" class="pie__cookies" id="cookiesPreferencias">Preferencias de cookies</button></li></ul></nav>
       <div class="pie__contacto"><a href="https://wa.me/50689168077?text=Hola%20Gabriela%2C%20vi%20tu%20sitio%20y%20quisiera%20consultar%20sobre%20mi%20contabilidad." target="_blank" rel="noopener">WhatsApp</a><a href="mailto:contaprado26@gmail.com">contaprado26@gmail.com</a><a href="https://www.linkedin.com/in/gabriela-prado-mora-9bab63175/" target="_blank" rel="noopener" aria-label="Ver el perfil profesional de Gabriela Prado en LinkedIn">LinkedIn</a></div>
     </div>
     <div class="contenedor pie__legal"><p>&copy; <span id="anioActual">2026</span> Gabriela Prado. Todos los derechos reservados.</p></div>
@@ -423,6 +416,14 @@
   <a class="wa-flotante" href="https://wa.me/50689168077?text=Hola%20Gabriela%2C%20vi%20tu%20sitio%20y%20quisiera%20consultar%20sobre%20mi%20contabilidad." target="_blank" rel="noopener" aria-label="Escribirme por WhatsApp">
     <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.97c0 2.3.65 4.45 1.78 6.28L4 29l7.93-1.74a12.1 12.1 0 0 0 4.1.72C22.67 28 28 22.64 28 16.03 28 9.42 22.68 3 16.04 3Zm0 22a9.9 9.9 0 0 1-3.37-.59l-.48-.18-4.7 1.03 1-4.58-.31-.5A9.6 9.6 0 0 1 6.4 15c0-5.3 4.33-9.6 9.64-9.6 5.3 0 9.56 4.3 9.56 9.6 0 5.3-4.3 9.6-9.56 9.6Zm5.3-7.2c-.29-.15-1.7-.84-1.97-.94-.26-.1-.46-.15-.65.15-.2.29-.75.94-.92 1.13-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.7-1.6-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.65-1.56-.89-2.14-.23-.56-.47-.48-.65-.49h-.55c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.2 3.02c.15.2 2.06 3.14 5 4.4.7.3 1.24.48 1.67.62.7.22 1.34.19 1.85.12.56-.08 1.7-.7 1.94-1.37.24-.68.24-1.26.17-1.38-.07-.12-.27-.2-.56-.34Z"/></svg>
   </a>
+
+  <div class="cookies" id="avisoCookies" role="region" aria-label="Aviso de cookies" hidden>
+    <p>Uso cookies de medición (Google Analytics) para saber cuántas personas visitan el sitio y mejorarlo. No se usan para publicidad. <a href="privacidad.html#cookies">Más información</a>.</p>
+    <div class="cookies__acciones">
+      <button type="button" class="boton" data-cookies="no">Rechazar</button>
+      <button type="button" class="boton" data-cookies="si">Aceptar</button>
+    </div>
+  </div>
 
   <script src="assets/js/script.js"></script>
 </body>
