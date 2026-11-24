@@ -7,7 +7,7 @@ Está construido únicamente con HTML5, CSS3 y JavaScript vanilla. No utiliza fr
 ## Estructura del proyecto
 
 ```text
-gp-contabilidad/
+contaprado.github.io/
 |
 |-- index.html
 |-- README.md
