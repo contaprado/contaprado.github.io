@@ -248,7 +248,7 @@
       })
         .then(function (respuesta) {
           if (!respuesta.ok) throw new Error("Respuesta no válida del servidor");
-          if (estado) estado.textContent = "Mensaje enviado. Te responderé pronto.";
+          if (estado) estado.textContent = "Mensaje enviado. Te respondo en menos de 24 horas hábiles.";
           enviarEvento("envio_formulario_contacto");
           formulario.reset();
         })
