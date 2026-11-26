@@ -242,3 +242,31 @@ img { max-width: 100%; height: auto; display: block; }
 .contacto__resena a { text-decoration: underline; text-underline-offset: 3px; }
 
 @media (pointer: coarse) { .pie__nav a, .pie__contacto a, .pie__cookies { display: inline-flex; align-items: center; min-height: 44px; } }
+
+
+/* Filtros de preguntas frecuentes */
+.faq__filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.faq__filtros[hidden] { display: none; }
+.faq__filtro { padding: 9px 15px; border: 1px solid var(--linea); border-radius: 999px; background: var(--blanco); color: var(--tinta); font: inherit; font-size: .88rem; cursor: pointer; transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+.faq__filtro:hover { border-color: var(--acento); }
+.faq__filtro:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+.faq__filtro[aria-pressed="true"] { background: var(--tinta); border-color: var(--tinta); color: var(--blanco); }
+.faq__conteo { min-height: 1.3em; margin: 0 0 10px; color: var(--tinta-suave); font-size: .85rem; }
+.faq__item[hidden] { display: none; }
+
+/* Celular: página más corta y fácil de recorrer */
+@media (max-width: 639px) {
+  .seccion { padding: 52px 0; }
+  .faq-seccion { padding-top: 52px; }
+  .faq__filtros { flex-wrap: nowrap; margin-inline: -20px; padding: 2px 20px 8px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .faq__filtros::-webkit-scrollbar { display: none; }
+  .faq__filtro { flex: 0 0 auto; scroll-snap-align: start; white-space: nowrap; }
+  .servicios { row-gap: 12px; }
+  .servicio { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: start; padding: 16px; }
+  .servicio__icono { grid-row: 1 / span 2; width: 40px; height: 40px; margin: 0; border-radius: 10px; }
+  .servicio__pregunta { display: none; }
+  .servicio h3 { grid-column: 2; margin: 0; font-size: 1.08rem; }
+  .servicio > p:last-child { grid-column: 2; margin-top: 4px; font-size: .9rem; }
+  .perfil__foto { max-width: none; aspect-ratio: 4 / 3; object-position: 50% 16%; }
+  .wa-flotante { width: 52px; height: 52px; right: 14px; }
+}
