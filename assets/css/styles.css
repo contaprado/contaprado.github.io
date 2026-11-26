@@ -237,3 +237,6 @@ img { max-width: 100%; height: auto; display: block; }
 .pie__cookies { padding: 0; background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .pie__cookies:hover { color: var(--blanco); }
 @media print { .cookies { display: none; } }
+
+.contacto__resena { margin: 1.25rem 0 0; font-size: .95rem; color: inherit; opacity: .85; }
+.contacto__resena a { text-decoration: underline; text-underline-offset: 3px; }
