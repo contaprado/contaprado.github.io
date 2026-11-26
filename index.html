@@ -234,6 +234,38 @@
     },
     {
       "@type": "Question",
+      "name": "¿Cómo empiezo a ordenar mi presupuesto personal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Empezamos por ver cuánto ingresas y en qué se va tu dinero cada mes. Con eso armamos un presupuesto sencillo, separando lo fijo de lo variable, y definimos qué ajustar primero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo salgo de mis deudas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hacemos una lista de tus deudas con su saldo, su cuota y su interés, y definimos un orden de pago realista según tu ingreso. Lo importante es un plan que puedas sostener mes a mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me ayudan a ahorrar y a ponerme metas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Definimos metas concretas, como un fondo de emergencia, un viaje o la prima de una casa, cada una con un monto y una fecha, y las incluimos en tu presupuesto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las finanzas personales son solo para quienes tienen un negocio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Son para cualquier persona que quiera tener claro su dinero: asalariados, independientes o familias. No necesitas tener una empresa."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Qué asesorías ofrecen?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -474,7 +506,7 @@
           <article class="servicio revelar">
             <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11l3 3v13H5z"/><path d="M9 11h6M9 15h6"/></svg></span><p class="servicio__pregunta">“Necesito ordenar mi contabilidad.”</p>
             <h3>Contabilidad mensual</h3>
-            <p>Registro, conciliaciones, cierres, estados financieros y seguimiento de la información.</p>
+            <p>Registro, conciliaciones, cuentas por cobrar y por pagar, cierres, estados financieros y seguimiento de la información.</p>
           </article>
           <article class="servicio revelar">
             <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="m9 14 2 2 4-4"/></svg></span><p class="servicio__pregunta">“Quiero cumplir a tiempo con mis obligaciones.”</p>
@@ -509,7 +541,7 @@
           <article class="servicio revelar">
             <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><p class="servicio__pregunta">“Tengo demasiadas tareas manuales.”</p>
             <h3>Automatización y datos</h3>
-            <p>Excel, Power BI, Python, automatización de reportes y mejora de procesos.</p>
+            <p>Excel, Power BI, Python, automatización de reportes, mejora de procesos y asesoría en la implementación de ERP.</p>
           </article>
           <article class="servicio revelar">
             <span class="servicio__icono" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span><p class="servicio__pregunta">“Mi contabilidad necesita una revisión.”</p>
@@ -517,7 +549,6 @@
             <p>Revisión de información, procesos, saldos y oportunidades de mejora.</p>
           </article>
         </div>
-        <p class="servicios__nota revelar">También doy apoyo con cuentas por cobrar y por pagar, y con asesoría en la implementación de ERP.</p>
 
         <div class="servicios__conversion revelar">
           <h3>¿No sabes cuál necesitas?</h3>
@@ -639,7 +670,8 @@
           <button type="button" class="faq__filtro" data-filtro="contabilidad" aria-pressed="false">Contabilidad</button>
           <button type="button" class="faq__filtro" data-filtro="impuestos" aria-pressed="false">Impuestos y planillas</button>
           <button type="button" class="faq__filtro" data-filtro="certificaciones" aria-pressed="false">Certificaciones</button>
-          <button type="button" class="faq__filtro" data-filtro="finanzas" aria-pressed="false">Flujo de caja y finanzas</button>
+          <button type="button" class="faq__filtro" data-filtro="finanzas" aria-pressed="false">Flujo de caja</button>
+          <button type="button" class="faq__filtro" data-filtro="personales" aria-pressed="false">Finanzas personales</button>
           <button type="button" class="faq__filtro" data-filtro="adrian" aria-pressed="false">Asesorías</button>
           <button type="button" class="faq__filtro" data-filtro="contratar" aria-pressed="false">Cómo contratar</button>
         </div>
@@ -657,12 +689,16 @@
           <div class="faq__item" data-categoria="impuestos"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-23" id="faq-btn-23"><span>¿Qué documentos necesito para preparar mi declaración de renta?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-23" role="region" aria-labelledby="faq-btn-23" hidden><p>Depende de tu caso, pero normalmente sirven tus facturas electrónicas emitidas y recibidas, estados de cuenta, comprobantes de retenciones y los datos de tus ingresos y gastos del período. Escríbeme y te digo exactamente qué reunir.</p></div></div>
           <div class="faq__item" data-categoria="impuestos"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-24" id="faq-btn-24"><span>¿Cada cuánto se declara el IVA?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-24" role="region" aria-labelledby="faq-btn-24" hidden><p>En general, quienes están obligados a declarar IVA lo hacen de forma mensual. Revisamos tu situación para confirmar tu obligación y las fechas que te aplican.</p></div></div>
           <div class="faq__item" data-categoria="impuestos"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-14" id="faq-btn-14"><span>¿Haces planillas y cargas sociales de la CCSS?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-14" role="region" aria-labelledby="faq-btn-14" hidden><p>Sí. Apoyo con el cálculo y la preparación de planillas y de las cargas sociales de tus colaboradores, para que tengas la información lista y ordenada.</p></div></div>
-          <div class="faq__item" data-categoria="certificaciones finanzas"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-11" id="faq-btn-11"><span>¿Haces certificaciones de ingresos o ayudas con finanzas personales?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-11" role="region" aria-labelledby="faq-btn-11" hidden><p>Sí. Preparo certificaciones y constancias de ingresos, y acompaño a personas que quieren ordenar su presupuesto, sus deudas y sus metas de ahorro.</p></div></div>
+          <div class="faq__item" data-categoria="certificaciones personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-11" id="faq-btn-11"><span>¿Haces certificaciones de ingresos o ayudas con finanzas personales?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-11" role="region" aria-labelledby="faq-btn-11" hidden><p>Sí. Preparo certificaciones y constancias de ingresos, y acompaño a personas que quieren ordenar su presupuesto, sus deudas y sus metas de ahorro.</p></div></div>
           <div class="faq__item" data-categoria="certificaciones"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-15" id="faq-btn-15"><span>¿Para qué sirve una certificación de ingresos?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-15" role="region" aria-labelledby="faq-btn-15" hidden><p>Es un documento que respalda lo que ganas. Suelen pedirlo los bancos para un crédito, y también se usa en trámites, alquileres y otros procesos donde hay que comprobar ingresos. Te explico qué información necesito para prepararla.</p></div></div>
           <div class="faq__item" data-categoria="certificaciones contabilidad"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-16" id="faq-btn-16"><span>¿Preparas estados financieros para el banco o para un crédito?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-16" role="region" aria-labelledby="faq-btn-16" hidden><p>Sí. Preparo y reviso estados financieros para presentar a bancos, socios o administración, con la información clara y consistente.</p></div></div>
           <div class="faq__item" data-categoria="finanzas certificaciones"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-17" id="faq-btn-17"><span>¿Haces flujo de caja y presupuestos?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-17" role="region" aria-labelledby="faq-btn-17" hidden><p>Sí. Armo flujos de caja proyectados y presupuestos para que sepas si el dinero te va a alcanzar y puedas decidir con anticipación, tanto para tu negocio como para tus finanzas personales.</p></div></div>
           <div class="faq__item" data-categoria="finanzas"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-25" id="faq-btn-25"><span>¿Qué es un flujo de caja proyectado y para qué sirve?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-25" role="region" aria-labelledby="faq-btn-25" hidden><p>Es una estimación de cuánto dinero va a entrar y a salir en los próximos meses. Sirve para saber si te va a alcanzar, anticipar meses difíciles, planear una inversión o sustentar una solicitud de crédito.</p></div></div>
-          <div class="faq__item" data-categoria="finanzas"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-27" id="faq-btn-27"><span>¿Me ayudas a salir de deudas y a ordenar mi presupuesto personal?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-27" role="region" aria-labelledby="faq-btn-27" hidden><p>Sí. En finanzas personales armamos tu presupuesto, ordenamos tus deudas y definimos metas de ahorro realistas, con un plan que puedas seguir mes a mes.</p></div></div>
+          <div class="faq__item" data-categoria="personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-27" id="faq-btn-27"><span>¿Me ayudas a salir de deudas y a ordenar mi presupuesto personal?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-27" role="region" aria-labelledby="faq-btn-27" hidden><p>Sí. En finanzas personales armamos tu presupuesto, ordenamos tus deudas y definimos metas de ahorro realistas, con un plan que puedas seguir mes a mes.</p></div></div>
+          <div class="faq__item" data-categoria="personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-32" id="faq-btn-32"><span>¿Cómo empiezo a ordenar mi presupuesto personal?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-32" role="region" aria-labelledby="faq-btn-32" hidden><p>Empezamos por ver cuánto ingresas y en qué se va tu dinero cada mes. Con eso armamos un presupuesto sencillo, separando lo fijo de lo variable, y definimos qué ajustar primero.</p></div></div>
+          <div class="faq__item" data-categoria="personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-33" id="faq-btn-33"><span>¿Cómo salgo de mis deudas?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-33" role="region" aria-labelledby="faq-btn-33" hidden><p>Hacemos una lista de tus deudas con su saldo, su cuota y su interés, y definimos un orden de pago realista según tu ingreso. Lo importante es un plan que puedas sostener mes a mes.</p></div></div>
+          <div class="faq__item" data-categoria="personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-34" id="faq-btn-34"><span>¿Me ayudan a ahorrar y a ponerme metas?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-34" role="region" aria-labelledby="faq-btn-34" hidden><p>Sí. Definimos metas concretas, como un fondo de emergencia, un viaje o la prima de una casa, cada una con un monto y una fecha, y las incluimos en tu presupuesto.</p></div></div>
+          <div class="faq__item" data-categoria="personales"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-35" id="faq-btn-35"><span>¿Las finanzas personales son solo para quienes tienen un negocio?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-35" role="region" aria-labelledby="faq-btn-35" hidden><p>No. Son para cualquier persona que quiera tener claro su dinero: asalariados, independientes o familias. No necesitas tener una empresa.</p></div></div>
           <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-28" id="faq-btn-28"><span>¿Qué asesorías ofrecen?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-28" role="region" aria-labelledby="faq-btn-28" hidden><p>Ofrecemos asesoría para ordenar la operación de tu negocio: cuentas por pagar, compras, importaciones y seguimiento de clientes y ventas. La idea es que la contabilidad te sirva para decidir en el día a día.</p></div></div>
           <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-29" id="faq-btn-29"><span>¿Me pueden ayudar con importaciones y compras?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-29" role="region" aria-labelledby="faq-btn-29" hidden><p>Sí. Te ayudamos a ordenar los pagos a proveedores, dar seguimiento a tus compras y entender cuánto te cuesta realmente lo que importas.</p></div></div>
           <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-30" id="faq-btn-30"><span>¿Pueden ayudarme a ordenar mis ventas y la gestión de mis clientes?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-30" role="region" aria-labelledby="faq-btn-30" hidden><p>Sí. Te apoyamos a dar seguimiento a tus clientes, tus cuentas por cobrar y el resultado de tus ventas.</p></div></div>
