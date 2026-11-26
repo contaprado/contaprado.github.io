@@ -88,3 +88,18 @@ No hay comando de build. La carpeta raíz es directamente publicable.
 ## Accesibilidad y responsive
 
 El sitio conserva el enlace de salto al contenido, foco visible, navegación móvil con `aria-expanded`, acordeones con regiones etiquetadas, labels del formulario y soporte para `prefers-reduced-motion`. El CSS usa un enfoque mobile-first y agrega distribuciones para tablet, laptop y monitores grandes.
+
+## Blog
+
+El blog vive en la carpeta `blog/`:
+
+- `blog/index.html`: lista de artículos (tarjetas).
+- `blog/<nombre-del-articulo>.html`: un archivo por artículo.
+
+Para publicar un artículo nuevo:
+
+1. Copia un artículo existente y renómbralo con palabras clave y guiones, sin tildes (por ejemplo `planillas-ccss-pymes.html`).
+2. Cambia `<title>`, `description`, `canonical`, `og:url`, el bloque JSON-LD (titular, fecha, URL), el `<h1>`, la entrada, la fecha y el cuerpo.
+3. Agrega su tarjeta al inicio de la lista en `blog/index.html` (y su entrada en el JSON-LD de esa página).
+4. Agrega la URL en `sitemap.xml` y en `llms.txt`.
+5. Sube los cambios y, en Google Search Console, usa «Inspección de URLs» para pedir que lo indexe.
