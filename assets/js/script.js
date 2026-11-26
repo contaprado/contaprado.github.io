@@ -371,3 +371,48 @@
   if (decision === "si") cargarAnalytics();
   else if (decision === null) mostrar();
 })();
+
+
+/* ------------------------------------------------------------
+   Filtros de preguntas frecuentes por tema.
+   Sin JavaScript se ven todas las preguntas y la barra queda oculta.
+   ------------------------------------------------------------ */
+(function () {
+  var barra = document.getElementById("faqFiltros");
+  var conteo = document.getElementById("faqConteo");
+  var items = document.querySelectorAll(".faq__item[data-categoria]");
+  if (!barra || !items.length) return;
+
+  var botones = barra.querySelectorAll(".faq__filtro");
+
+  function cuantas(tema) {
+    var n = 0;
+    items.forEach(function (it) {
+      if (tema === "todas" || (" " + it.getAttribute("data-categoria") + " ").indexOf(" " + tema + " ") > -1) n++;
+    });
+    return n;
+  }
+
+  botones.forEach(function (b) {
+    var tema = b.getAttribute("data-filtro");
+    b.textContent = b.textContent + " (" + cuantas(tema) + ")";
+    b.addEventListener("click", function () {
+      botones.forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
+      var visibles = 0;
+      items.forEach(function (it) {
+        var coincide = tema === "todas" || (" " + it.getAttribute("data-categoria") + " ").indexOf(" " + tema + " ") > -1;
+        it.hidden = !coincide;
+        if (coincide) visibles++;
+        else {
+          var p = it.querySelector(".faq__pregunta");
+          var panel = it.querySelector(".faq__respuesta");
+          if (p) p.setAttribute("aria-expanded", "false");
+          if (panel) panel.hidden = true;
+        }
+      });
+      if (conteo) conteo.textContent = tema === "todas" ? "" : "Mostrando " + visibles + " " + (visibles === 1 ? "pregunta" : "preguntas") + ".";
+    });
+  });
+
+  barra.hidden = false;
+})();
