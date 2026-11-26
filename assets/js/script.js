@@ -374,45 +374,85 @@
 
 
 /* ------------------------------------------------------------
-   Filtros de preguntas frecuentes por tema.
+   Filtros de preguntas frecuentes por tema y boton "Ver mas".
    Sin JavaScript se ven todas las preguntas y la barra queda oculta.
    ------------------------------------------------------------ */
 (function () {
   var barra = document.getElementById("faqFiltros");
   var conteo = document.getElementById("faqConteo");
+  var lista = document.getElementById("faqLista");
   var items = document.querySelectorAll(".faq__item[data-categoria]");
-  if (!barra || !items.length) return;
+  if (!barra || !lista || !items.length) return;
 
   var botones = barra.querySelectorAll(".faq__filtro");
+  var LOTE = 8;
+  var tema = "todas";
+  var mostradas = LOTE;
 
-  function cuantas(tema) {
+  var mas = document.createElement("button");
+  mas.type = "button";
+  mas.className = "faq__mas";
+  mas.hidden = true;
+  lista.parentNode.insertBefore(mas, lista.nextSibling);
+
+  function coincide(it, t) {
+    return t === "todas" || (" " + it.getAttribute("data-categoria") + " ").indexOf(" " + t + " ") > -1;
+  }
+
+  function cuantas(t) {
     var n = 0;
-    items.forEach(function (it) {
-      if (tema === "todas" || (" " + it.getAttribute("data-categoria") + " ").indexOf(" " + tema + " ") > -1) n++;
-    });
+    items.forEach(function (it) { if (coincide(it, t)) n++; });
     return n;
   }
 
+  function cerrar(it) {
+    var p = it.querySelector(".faq__pregunta");
+    var panel = it.querySelector(".faq__respuesta");
+    if (p) p.setAttribute("aria-expanded", "false");
+    if (panel) panel.hidden = true;
+  }
+
+  function pintar() {
+    var total = cuantas(tema);
+    var vistas = 0;
+    items.forEach(function (it) {
+      var ver = coincide(it, tema) && vistas < mostradas;
+      if (coincide(it, tema) && ver) vistas++;
+      it.hidden = !ver;
+      if (!ver) cerrar(it);
+    });
+    if (conteo) conteo.textContent = total > vistas || tema !== "todas"
+      ? "Mostrando " + vistas + " de " + total + " " + (total === 1 ? "pregunta" : "preguntas") + "."
+      : "";
+    var faltan = total - vistas;
+    mas.hidden = faltan <= 0;
+    mas.textContent = "Ver más preguntas (" + faltan + ")";
+  }
+
   botones.forEach(function (b) {
-    var tema = b.getAttribute("data-filtro");
-    b.textContent = b.textContent + " (" + cuantas(tema) + ")";
+    var t = b.getAttribute("data-filtro");
+    b.textContent = b.textContent + " (" + cuantas(t) + ")";
     b.addEventListener("click", function () {
       botones.forEach(function (o) { o.setAttribute("aria-pressed", String(o === b)); });
-      var visibles = 0;
-      items.forEach(function (it) {
-        var coincide = tema === "todas" || (" " + it.getAttribute("data-categoria") + " ").indexOf(" " + tema + " ") > -1;
-        it.hidden = !coincide;
-        if (coincide) visibles++;
-        else {
-          var p = it.querySelector(".faq__pregunta");
-          var panel = it.querySelector(".faq__respuesta");
-          if (p) p.setAttribute("aria-expanded", "false");
-          if (panel) panel.hidden = true;
-        }
-      });
-      if (conteo) conteo.textContent = tema === "todas" ? "" : "Mostrando " + visibles + " " + (visibles === 1 ? "pregunta" : "preguntas") + ".";
+      tema = t;
+      mostradas = LOTE;
+      pintar();
     });
   });
 
+  mas.addEventListener("click", function () {
+    var antes = [];
+    items.forEach(function (it) { if (!it.hidden) antes.push(it); });
+    mostradas += LOTE;
+    pintar();
+    if (mas.hidden) {
+      var nueva = null;
+      items.forEach(function (it) { if (!nueva && !it.hidden && antes.indexOf(it) === -1) nueva = it; });
+      var q = nueva && nueva.querySelector(".faq__pregunta");
+      if (q) q.focus();
+    }
+  });
+
+  pintar();
   barra.hidden = false;
 })();
