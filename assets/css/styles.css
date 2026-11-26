@@ -271,3 +271,7 @@ img { max-width: 100%; height: auto; display: block; }
   .wa-flotante { width: 52px; height: 52px; right: 14px; }
 }
 .pie__oculto, .pie__marca > p:last-child { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.faq__mas { display: block; margin: 22px auto 0; padding: 12px 26px; border: 1px solid var(--tinta); border-radius: 999px; background: transparent; color: var(--tinta); font: inherit; font-size: .92rem; font-weight: 600; cursor: pointer; transition: background-color 200ms ease, color 200ms ease; }
+.faq__mas[hidden] { display: none; }
+.faq__mas:hover { background: var(--tinta); color: var(--blanco); }
+.faq__mas:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
