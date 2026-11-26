@@ -315,3 +315,7 @@ img { max-width: 100%; height: auto; display: block; }
 .articulo__cta .boton { justify-self: start; background: var(--blanco); color: var(--tinta); }
 .articulo__aviso { margin-top: 30px; color: var(--gris); font-size: .84rem; }
 .articulo__volver { margin-top: 26px; }
+.articulo__fuentes { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--linea); }
+.articulo__fuentes h2 { font-family: var(--sans); font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; color: var(--tinta); }
+.articulo__fuentes ul { display: grid; gap: 8px; margin-top: 12px; padding-left: 1.2em; list-style: disc; }
+.articulo__fuentes li { color: var(--tinta-suave); font-size: .9rem; line-height: 1.6; }
