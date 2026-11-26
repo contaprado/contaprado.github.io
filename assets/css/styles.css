@@ -61,7 +61,7 @@ img { max-width: 100%; height: auto; display: block; }
 .boton--ancho { width: 100%; }
 
 /* ---------- 4. HEADER Y NAVEGACIÓN ---------- */
-.cabecera { position: sticky; top: 0; z-index: 100; background: rgba(248, 249, 247, .94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--linea); padding-top: env(safe-area-inset-top, 0px); }
+.cabecera { position: sticky; top: 0; z-index: 100; background: rgba(248, 249, 247, .98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--linea); padding-top: env(safe-area-inset-top, 0px); }
 .cabecera__interior { display: flex; align-items: center; justify-content: space-between; min-height: var(--alto-cabecera); }
 .marca { display: inline-flex; align-items: center; gap: 9px; color: var(--tinta); text-decoration: none; }
 .marca__logo { display: block; height: 42px; width: auto; }
@@ -107,8 +107,8 @@ img { max-width: 100%; height: auto; display: block; }
 .problemas .seccion__etiqueta { color: var(--acento-sobre-oscuro); }
 .problemas .seccion__titulo { max-width: 12ch; border-color: var(--acento-sobre-oscuro); }
 .problemas__lista { counter-reset: problema; border-top: 1px solid rgba(255, 255, 255, .2); }
-.problemas__lista li { counter-increment: problema; display: grid; grid-template-columns: 35px 1fr; gap: 12px; padding: 17px 0; border-bottom: 1px solid rgba(255, 255, 255, .2); color: #dce5e5; }
-.problemas__lista li::before { content: "0" counter(problema); color: var(--acento-sobre-oscuro); font-size: .78rem; font-weight: 700; }
+.problemas__lista li { counter-increment: problema; display: grid; grid-template-columns: 20px 1fr; gap: 12px; padding: 17px 0; border-bottom: 1px solid rgba(255, 255, 255, .2); color: #dce5e5; }
+.problemas__lista li::before { content: ""; width: 7px; height: 7px; margin-top: .6em; border-radius: 50%; background: var(--acento-sobre-oscuro); }
 .problemas__puente { margin-top: 25px; color: var(--blanco); font-family: var(--serif); font-size: 1.15rem; }
 
 /* ---------- 7. SERVICIOS ---------- */
@@ -240,3 +240,5 @@ img { max-width: 100%; height: auto; display: block; }
 
 .contacto__resena { margin: 1.25rem 0 0; font-size: .95rem; color: inherit; opacity: .85; }
 .contacto__resena a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (pointer: coarse) { .pie__nav a, .pie__contacto a, .pie__cookies { display: inline-flex; align-items: center; min-height: 44px; } }
