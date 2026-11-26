@@ -234,6 +234,38 @@
     },
     {
       "@type": "Question",
+      "name": "¿Qué servicios ofrece Adrián?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adrián acompaña a APE como asesor. Su fuerte es la operación del negocio: cuentas por pagar, compras, importaciones y gestión comercial de cuentas. Ayuda a que la información contable se conecte con lo que pasa en el día a día."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me pueden ayudar con importaciones y compras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Adrián tiene experiencia en importaciones y compras, y puede ayudarte a ordenar los pagos a proveedores y a entender cuánto te cuesta realmente lo que importas o compras."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden ayudarme a ordenar mis ventas y la gestión de mis clientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Adrián ha trabajado en gestión comercial de cuentas y cursa la Maestría en Ventas, así que puede apoyarte a dar seguimiento a tus clientes, tus cuentas por cobrar y el resultado de tus ventas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con quién voy a trabajar, con Gabriela o con Adrián?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de lo que necesites. Gabriela, contadora privada y pública incorporada, lleva la contabilidad, los impuestos, las certificaciones y las finanzas. Adrián apoya como asesor en la parte operativa y comercial. Cuéntanos tu caso y te decimos quién te acompaña."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "¿Qué alternativas hay para llevar la contabilidad de mi negocio?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -608,6 +640,7 @@
           <button type="button" class="faq__filtro" data-filtro="impuestos" aria-pressed="false">Impuestos y planillas</button>
           <button type="button" class="faq__filtro" data-filtro="certificaciones" aria-pressed="false">Certificaciones</button>
           <button type="button" class="faq__filtro" data-filtro="finanzas" aria-pressed="false">Flujo de caja y finanzas</button>
+          <button type="button" class="faq__filtro" data-filtro="adrian" aria-pressed="false">Con Adrián</button>
           <button type="button" class="faq__filtro" data-filtro="contratar" aria-pressed="false">Cómo contratar</button>
         </div>
         <p class="faq__conteo" id="faqConteo" role="status" aria-live="polite"></p>
@@ -630,6 +663,10 @@
           <div class="faq__item" data-categoria="finanzas certificaciones"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-17" id="faq-btn-17"><span>¿Haces flujo de caja y presupuestos?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-17" role="region" aria-labelledby="faq-btn-17" hidden><p>Sí. Armo flujos de caja proyectados y presupuestos para que sepas si el dinero te va a alcanzar y puedas decidir con anticipación, tanto para tu negocio como para tus finanzas personales.</p></div></div>
           <div class="faq__item" data-categoria="finanzas"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-25" id="faq-btn-25"><span>¿Qué es un flujo de caja proyectado y para qué sirve?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-25" role="region" aria-labelledby="faq-btn-25" hidden><p>Es una estimación de cuánto dinero va a entrar y a salir en los próximos meses. Sirve para saber si te va a alcanzar, anticipar meses difíciles, planear una inversión o sustentar una solicitud de crédito.</p></div></div>
           <div class="faq__item" data-categoria="finanzas"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-27" id="faq-btn-27"><span>¿Me ayudas a salir de deudas y a ordenar mi presupuesto personal?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-27" role="region" aria-labelledby="faq-btn-27" hidden><p>Sí. En finanzas personales armamos tu presupuesto, ordenamos tus deudas y definimos metas de ahorro realistas, con un plan que puedas seguir mes a mes.</p></div></div>
+          <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-28" id="faq-btn-28"><span>¿Qué servicios ofrece Adrián?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-28" role="region" aria-labelledby="faq-btn-28" hidden><p>Adrián acompaña a APE como asesor. Su fuerte es la operación del negocio: cuentas por pagar, compras, importaciones y gestión comercial de cuentas. Ayuda a que la información contable se conecte con lo que pasa en el día a día.</p></div></div>
+          <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-29" id="faq-btn-29"><span>¿Me pueden ayudar con importaciones y compras?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-29" role="region" aria-labelledby="faq-btn-29" hidden><p>Sí. Adrián tiene experiencia en importaciones y compras, y puede ayudarte a ordenar los pagos a proveedores y a entender cuánto te cuesta realmente lo que importas o compras.</p></div></div>
+          <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-30" id="faq-btn-30"><span>¿Pueden ayudarme a ordenar mis ventas y la gestión de mis clientes?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-30" role="region" aria-labelledby="faq-btn-30" hidden><p>Sí. Adrián ha trabajado en gestión comercial de cuentas y cursa la Maestría en Ventas, así que puede apoyarte a dar seguimiento a tus clientes, tus cuentas por cobrar y el resultado de tus ventas.</p></div></div>
+          <div class="faq__item" data-categoria="adrian"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-31" id="faq-btn-31"><span>¿Con quién voy a trabajar, con Gabriela o con Adrián?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-31" role="region" aria-labelledby="faq-btn-31" hidden><p>Depende de lo que necesites. Gabriela, contadora privada y pública incorporada, lleva la contabilidad, los impuestos, las certificaciones y las finanzas. Adrián apoya como asesor en la parte operativa y comercial. Cuéntanos tu caso y te decimos quién te acompaña.</p></div></div>
           <div class="faq__item" data-categoria="contratar"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-20" id="faq-btn-20"><span>¿Qué alternativas hay para llevar la contabilidad de mi negocio?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-20" role="region" aria-labelledby="faq-btn-20" hidden><p>Hay tres caminos comunes: contratar a una persona de planta, hacerla tú mismo o trabajar con una contadora externa. La contabilidad externa suele convenir a pymes y profesionales independientes, porque pagas por lo que necesitas, sin una planilla fija más. Si no sabes cuál te conviene, empezamos con un diagnóstico contable de tu situación.</p></div></div>
           <div class="faq__item" data-categoria="contratar"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-21" id="faq-btn-21"><span>¿Es mejor un contador externo o uno de planta?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-21" role="region" aria-labelledby="faq-btn-21" hidden><p>Depende del volumen de movimientos. Un contador de planta tiene sentido cuando hay mucho trabajo diario; un contador externo es más práctico cuando tu operación es pequeña o mediana, y te da el mismo orden con un costo más flexible.</p></div></div>
           <div class="faq__item" data-categoria="contratar"><h3><button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-22" id="faq-btn-22"><span>¿Cuál es la diferencia entre contador privado y contador público autorizado?</span><span class="faq__icono" aria-hidden="true"></span></button></h3><div class="faq__respuesta" id="faq-22" role="region" aria-labelledby="faq-btn-22" hidden><p>Son dos figuras profesionales distintas en Costa Rica, con su propio colegio profesional. Yo estoy incorporada como contadora privada (CPI 35512) y como contadora pública autorizada (CPA 8812). Si necesitas un documento específico, te confirmo qué figura lo debe emitir.</p></div></div>
